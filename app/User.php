@@ -74,4 +74,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Slot');
    }
 
+     public function references(){
+        return $this->belongsToMany('App\Reference');
+    }
+
 }

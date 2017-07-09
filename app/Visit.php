@@ -31,4 +31,8 @@ class Visit extends Model
     public function prescriptions(){
         return $this->hasMany('App\Prescription');
     }
+
+    public function reference(){
+        return $this->belongsTo('App\Reference');
+    }
 }

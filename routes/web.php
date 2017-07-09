@@ -4,10 +4,11 @@ Route::get('test',function(){
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('maintainence');
 });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 

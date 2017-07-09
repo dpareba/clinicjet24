@@ -193,13 +193,13 @@ class PatientController extends Controller
         $patient->patientpin = Str::upper($request->patientpin);
         $patient->allergies = Str::upper($request->allergies);
         $patient->bloodgroup = $request->bloodgroup;
-        $maxpatid = Patient::orderBy('id','desc')->first();
+        $maxpatid = Patient::orderBy('patientcode','desc')->first();
         //dd($maxpatid);
         //$patient->patientcode = rand(1000,9999);
         if ($maxpatid == null) {
             $patient->patientcode = 1000;
         }else{
-             $patient->patientcode = 1000 + $maxpatid->id;
+             $patient->patientcode = $maxpatid->patientcode + 1;
         }
        
         $patient->idproof = $request->idproof;
